@@ -35,6 +35,73 @@
 
 
 //creo array 10 oggetti
+// var zucchine = [
+//     {
+//         varieta: 'var1',
+//         peso: 5,
+//         lunghezza: 10
+//     },
+//     {
+//         varieta: 'var2',
+//         peso: 7,
+//         lunghezza: 12
+//     },
+//     {
+//         varieta: 'var3',
+//         peso: 9,
+//         lunghezza: 15
+//     },
+//     {
+//         varieta: 'var4',
+//         peso: 11,
+//         lunghezza: 17
+//     },
+//     {
+//         varieta: 'var5',
+//         peso: 8,
+//         lunghezza: 10
+//     },
+//     {
+//         varieta: 'var6',
+//         peso: 15,
+//         lunghezza: 19
+//     },
+//     {
+//         varieta: 'var7',
+//         peso: 8,
+//         lunghezza: 16
+//     },
+//     {
+//         varieta: 'var8',
+//         peso: 6,
+//         lunghezza: 17
+//     },
+//     {
+//         varieta: 'var9',
+//         peso: 5,
+//         lunghezza: 18
+//     },
+//     {
+//         varieta: 'var10',
+//         peso: 9,
+//         lunghezza: 14
+//     },
+// ];
+
+// //calcola quanto pesano tutte le zucchine
+
+// var pesoTot = 0;
+// for (var i=0; i<zucchine.length; i++){
+//     pesoTot += zucchine[i].peso;
+// }
+
+// console.log(pesoTot);
+
+
+//=======================================================
+// 3. Crea un array di 10 oggetti che rappresentano una zucchina. Dividi in due array separati le zucchine che misurano meno o più di 15cm. Infine stampa separatamente quanto pesano i due gruppi di zucchine
+
+//creo array 10 oggetti
 var zucchine = [
     {
         varieta: 'var1',
@@ -88,15 +155,31 @@ var zucchine = [
     },
 ];
 
-//calcola quanto pesano tutte le zucchine
+// Dividi in due array separati le zucchine che misurano meno o più di 15cm. 
 
-var pesoTot = 0;
-for (var i=0; i<zucchine.length; i++){
-    pesoTot += zucchine[i].peso;
+var zucchineCorte = [];
+var zucchineLunghe = [];
+for(var i=0; i<zucchine.length; i++){
+    if (zucchine[i].lunghezza < 15){
+        zucchineCorte.push(zucchine[i])
+    } else {
+        zucchineLunghe.push(zucchine[i])
+    }
 }
+// console.log(zucchineCorte);
+// console.log(zucchineLunghe);
 
-console.log(pesoTot);
+// Stampa separatamente quanto pesano i due gruppi di zucchine
+//calcolo peso zucchine corte
+pesoCorte = 0;
+for(var i=0; i<zucchineCorte.length; i++){
+    pesoCorte += zucchineCorte[i].peso
+}
+console.log('Il peso delle zucchine corte è di ' + pesoCorte + 'kg.');
 
-
-//=======================================================
-// 3. Crea un array di 10 oggetti che rappresentano una zucchina. Dividi in due array separati le zucchine che misurano meno o più di 15cm. Infine stampa separatamente quanto pesano i due gruppi di zucchine
+//calcolo peso zucchine lunghe
+pesoLunghe = 0;
+for(var i=0; i<zucchineLunghe.length; i++){
+    pesoLunghe += zucchineLunghe[i].peso
+}
+console.log('Il peso zucchine lunghe è di ' + pesoLunghe + 'kg.');
